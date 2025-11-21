@@ -47,6 +47,18 @@ const featuredBags = [
     price: "₦110",
     image: "src/images/bag8.png",
   },
+  {
+    id: 9,
+    name: "Premium Tote Bag",
+    price: "₦110",
+    image: "src/images/bag9.png",
+  },
+  {
+    id: 10,
+    name: "Classy Bag",
+    price: "₦110",
+    image: "src/images/bag10.png",
+  },
 ];
 
 const productsSection = document.querySelector(".products-section");
