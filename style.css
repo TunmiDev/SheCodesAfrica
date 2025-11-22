@@ -85,12 +85,15 @@ body::-webkit-scrollbar {
 .hero-text h1 {
   font-size: 3rem;
   color: #4a2c15;
+  padding-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 40px;
 }
 
 .hero-text p {
-  margin: 15px 0;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #555;
+  margin-left: 40px;
 }
 
 .hero-img img {
@@ -102,20 +105,17 @@ body::-webkit-scrollbar {
 
 /* BUTTON */
 .btn {
-  padding: 12px 20px;
+  padding: 12px 15px;
   background: #8b4513;
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
+  margin: 32px 0 0 96px;
+  display: block;
+  width: fit-content;
 }
-
-.btn.small {
-  padding: 8px 14px;
-  font-size: 0.9rem;
-}
-
 .btn:hover {
   opacity: 0.9;
 }
@@ -182,5 +182,12 @@ body::-webkit-scrollbar {
 
   .hero-img img {
     width: 100%;
+  }
+
+  .btn {
+    margin: 32px auto 0 auto;
+    display: block;
+    width: fit-content;
+    font-size: 0.95rem;
   }
 }
