@@ -26,7 +26,7 @@ body::-webkit-scrollbar {
   align-items: center;
   padding: 20px 60px;
   background: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
   position: sticky;
   top: 0;
   z-index: 100;
@@ -36,6 +36,29 @@ body::-webkit-scrollbar {
   font-size: 1.7rem;
   font-weight: 700;
   color: #8b4513;
+}
+.pinterest-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #efefef;
+  padding: 12px 15px;
+  border-radius: 25px;
+  width: 500px;
+}
+
+.pinterest-search .icon {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.pinterest-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
 }
 
 .nav a {
@@ -71,8 +94,10 @@ body::-webkit-scrollbar {
 }
 
 .hero-img img {
-  width: 450px;
+  width: 800px;
   border-radius: 15px;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* BUTTON */
