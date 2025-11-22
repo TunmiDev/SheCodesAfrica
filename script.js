@@ -61,15 +61,48 @@ const featuredBags = [
   },
 ];
 
-const productsSection = document.querySelector(".products-section");
 const productsGrid = document.querySelector(".product-grid");
-featuredBags.forEach((bag) => {
-  const card = document.createElement("div");
-  card.classList.add("product-card");
-  card.innerHTML = `
-    <img src="${bag.image}" alt="${bag.name}" class="product-image" />
-    <h3 class="product-name">${bag.name}</h3>
-    <p class="product-price">${bag.price}</p>
-  `;
-  productsGrid.appendChild(card);
-});
+const searchInput = document.querySelector(".pinterest-search input");
+
+// debounce that forwards args
+function debounce(func, delay) {
+  let timeout;
+  return function (...args) {
+    const context = this;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(context, args);
+    }, delay);
+  };
+}
+
+function handleSearch(event) {
+  const query = event.target.value.toLowerCase();
+  const filteredBags = featuredBags.filter((bag) =>
+    bag.name.toLowerCase().includes(query)
+  );
+  renderProducts(filteredBags);
+}
+
+function renderProducts(productsList) {
+  productsGrid.innerHTML = "";
+
+  productsList.forEach((bag) => {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+
+    card.innerHTML = `
+      <img src="${bag.image}" alt="${bag.name}" class="product-image" />
+      <h3 class="product-name">${bag.name}</h3>
+      <p class="product-price">${bag.price}</p>
+    `;
+
+    productsGrid.appendChild(card);
+  });
+}
+
+// wire up search
+searchInput.addEventListener("input", debounce(handleSearch, 300));
+
+// initial render
+renderProducts(featuredBags);
